@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <div class = "fan">
+        <div class = "blades"></div>
+    </div>
+    <button id = "speedButton">Speed: 1</button>
+
+    <script>
+        const blade = document.querySelector('.blades');
+        const speedButton = document.getElementById('speedButton');
+        let speed = 1;
+
+        speedButton.addEventListener('click' , function(){
+        speed = speed % 10 + 1;
+        speedButton.textContent = 'Speed: ' + speed;
+        blade.style.animationDuration = 2 / speed + 's';
+});
+    </script>
+</body>
+</html>
